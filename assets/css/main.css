@@ -1583,7 +1583,7 @@ span {
 }
 
 .contact-us-wrapper .contact-us-contact {
-  padding: 120px 0;
+  padding: 20px;
 }
 @media (max-width: 991px) {
   .contact-us-wrapper .contact-us-contact {
@@ -1597,12 +1597,13 @@ span {
 .contact-us-wrapper .contact-us-contact .comment-form-wrap .form-clt .nice-select {
   width: 100%;
   outline: none;
-  border: none;
+  /* border: none; */
   border-radius: 100px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 3px solid white;
   padding: 16px 20px;
   background-color: transparent;
   font-weight: 400;
+  /* z-index:2; */
 }
 /* Maintain dropdown text styling */
 .contact-us-wrapper .contact-us-contact .comment-form-wrap .form-clt select option {
@@ -1619,7 +1620,7 @@ span {
 }
 
 .contact-us-wrapper .contact-us-contact .comment-form-wrap .form-clt textarea {
-  padding-bottom: 100px;
+  /* padding-bottom: 100px; */
   border-radius: 20px;
   resize: none;
 }
@@ -1671,8 +1672,8 @@ span {
   }
 }
 .contact-us-wrapper .map-area .google-map iframe {
-  width: 1053px;
-  height: 810px;
+  width: 100%;
+    height: 570px;
 }
 
 .cta-items {
@@ -6325,6 +6326,23 @@ ease-in-out;
   width: 100%;
   height: 100%;
 }
+.bg-covers {
+    position: relative; /* needed for overlay */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: 1; /* content will be above overlay */
+}
+
+/* Overlay */
+.bg-covers::before {
+    content: "";
+    position: absolute;
+    inset: 0; /* top:0; right:0; bottom:0; left:0; */
+    background-color: rgba(0, 0, 0, 0.5); /* adjust opacity for darkness */
+    z-index: 0; /* behind the content */
+}
+
 
 .theme-bg {
   background-color: var(--theme);
@@ -8183,22 +8201,24 @@ input.main-search-input::placeholder {
 
 .section-bg-2 {
     position: relative;
-    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-                      url("https://www.gokitetours.com/wp-content/uploads/2024/09/1.jpg");
+    background-image: url("https://img.freepik.com/premium-photo/seaside-travel-man-with-yellow-bags-travel-beach_213396-743.jpg?uid=R189150807&ga=GA1.1.29269001.1752921385&semt=ais_hybrid&w=740&q=80");
     background-repeat: no-repeat;
-    /* background-size: cover; */
-    /* background-position: center; */
+    background-size: cover;
+    background-position: center;
     z-index: 1;
+        height: 570px;
+
 }
 
-
+/* Overlay */
 .section-bg-2::before {
     content: "";
     position: absolute;
-    inset: 0; /* top:0; right:0; bottom:0; left:0; */
-    background-color: rgba(0, 0, 0, 0.5); /* semi-transparent overlay, adjust opacity */
-    z-index: -1;
+    inset: 0; 
+    background-color: rgba(0, 0, 0, 0.5); /* dark overlay */
+    z-index: -2; /* ensure form content is above overlay */
 }
+
 
 
 .section-bg-3 {
