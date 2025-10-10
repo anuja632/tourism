@@ -515,7 +515,7 @@
             },
             breakpoints: {
                 1399: {
-                    slidesPerView: 4,
+                    slidesPerView: 3,
                 },
                 1199: {
                     slidesPerView: 3,
