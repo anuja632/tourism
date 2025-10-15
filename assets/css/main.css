@@ -42,6 +42,69 @@ Version: 1.0.0
   --bg: #f2f2f2;
   --box-shadow: 0px 1px 14px 0px rgba(0, 0, 0, 0.13);
 }
+    /* Tabs Styling */
+    .nav-tabs {
+      border-bottom: 2px solid #e9ecef;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .nav-tabs .nav-link {
+      color: #333;
+      font-weight: 500;
+      border: none;
+      border-bottom: 3px solid transparent;
+      transition: all 0.3s ease;
+    }
+
+    .nav-tabs .nav-link:hover {
+      color: var(--theme);
+      border-bottom: 3px solid var(--theme);
+      background-color: rgba(255, 206, 0, 0.1);
+    }
+
+    .nav-tabs .nav-link.active {
+      color: #000;
+      font-weight: 600;
+      background-color: transparent;
+      border-bottom: 3px solid var(--theme);
+    }
+
+    .tab-content {
+      background: #fff;
+      padding: 25px;
+      border-radius: 8px;
+      border: 1px solid #dee2e6;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .tab-content h5 {
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+      ul.custom-list li {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+    .tab-content ul {
+      padding-left: 20px;
+    }
+
+    .tab-content ul li {
+      margin-bottom: 8px;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .nav-tabs {
+        justify-content: center;
+      }
+      .nav-item {
+        margin-bottom: 8px;
+      }
+    }
 
 .theme-btn {
   position: relative;
@@ -53,7 +116,7 @@ Version: 1.0.0
   text-transform: capitalize;
   text-align: center;
   background-color: var(--theme);
-  color: var(--white);
+  color: var(--white) !important;
   line-height: 1;
   padding: 22px 24px;
   min-width: 170px;
@@ -89,6 +152,14 @@ Version: 1.0.0
 .theme-btn:hover::before {
   width: 100%;
 }
+.theme-btn.style-2 {
+  background-color: var(--white) !important;
+  color: var(--theme) !important;
+}
+.theme-btn.style-2:hover {
+  color: var(--white) !important;
+  box-shadow: none;
+}
 @media (max-width: 767px) {
   .theme-btn {
     padding: 20px 32px;
@@ -100,6 +171,7 @@ Version: 1.0.0
     font-size: 14px;
   }
 }
+
 
 .link-btn {
   font-size: 16px;
@@ -2857,7 +2929,7 @@ span {
 .destination-card-items .destination-content .price .theme-btn.style-2 {
   border-radius: 100px;
   background: rgba(2, 165, 206, 0.1);
-  color: var(--theme);
+  color: var(--theme) ;
   padding: 10px 20px;
   min-width: 140px;
 }
@@ -5716,7 +5788,7 @@ span {
   left: 50%;
   transform: translateX(-50%);
 }
-.header-11{
+/* .header-11{
   background: linear-gradient(
   90deg, 
   rgba(48, 6, 152, 0.9) 0%, 
@@ -5724,7 +5796,7 @@ span {
   rgba(117, 31, 244, 0.9) 100%
 );
 color: white !important;
-}
+} */
 @media (max-width: 1399px) {
   .header-1.header-2 .logo-2 {
     width: 150px;
@@ -5781,15 +5853,15 @@ color: white !important;
   z-index: -1;
   clip-path: polygon(78% 0, 100% 106%, 100% 100%, 0 100%, 0 0);
 }
-.header-main .main-menu ul li a {
+/* .header-main .main-menu ul li a {
   color:white !important;
-}
+} */
 .header-main .main-menu ul li .submenu {
     position: absolute;
     top: 115%;
     inset-inline-start: 0;
     min-width: 240px;
-    background: var( --theme-2) !important;
+    background: var( --white) !important;
     padding: 20px 0;
     z-index: 99999;
     visibility: hidden;
@@ -6198,6 +6270,7 @@ ease-in-out;
 }
 .sticky.header-3 .theme-btn {
   background-color: var(--theme);
+  color:var(--white);
 }
 
 .offcanvas__info {
