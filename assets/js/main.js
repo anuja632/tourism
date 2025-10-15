@@ -1,3 +1,4 @@
+
 (function($) {
     "use strict";
   
@@ -742,7 +743,27 @@
       }
       
       loader();
-  
-   
+    // Simple Captcha Generator
+  const num1 = Math.floor(Math.random() * 10) + 1;
+  const num2 = Math.floor(Math.random() * 10) + 1;
+  document.getElementById("captcha-question").textContent = `${num1} + ${num2} =`;
+
+  document.getElementById("enquiryForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    const answer = parseInt(document.getElementById("captcha-answer").value);
+    
+    if (answer === num1 + num2) {
+      alert("Form submitted successfully!");
+      this.reset();
+      // Redirect to Thank You page after alert
+      setTimeout(() => {
+        window.location.href = "thankyou.html";
+      }, 500); // small delay (0.5 sec)
+    } else {
+      alert("Incorrect Captcha. Please try again.");
+    }
+  });
   
   })(jQuery); // End jQuery
+
+
